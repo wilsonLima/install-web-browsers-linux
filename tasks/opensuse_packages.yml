@@ -1,18 +1,6 @@
 ---
 
 
-# Instalando o Vivaldi
-
-- name: Instalando o Vivaldi
-  zypper:
-    name: vivaldi
-    state: present
-    force: yes
-  become: true
-  tags:
-    - vivaldi
-    - web
-
 # Instalando o Google Chrome
 
 - name: Instalando o Google Chrome
@@ -35,4 +23,16 @@
   become: true
   tags:
     - opera
+    - web
+
+# Instalando o Vivaldi
+
+- name: Instalando o Vivaldi
+  zypper:
+    name: vivaldi
+    state: present
+    force: yes
+  become: true
+  tags:
+    - vivaldi
     - web
