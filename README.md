@@ -61,7 +61,7 @@ Exemplo de uso da Role, com as configurações padrão:
 
     - hosts: desktop
       roles:
-         - setup-desktop-linux
+         - install-web-browsers-linux
 
 
 Exemplo de Comandos
