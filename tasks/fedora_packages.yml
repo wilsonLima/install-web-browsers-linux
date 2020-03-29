@@ -1,0 +1,35 @@
+---
+
+
+# Instalando o Google Chrome
+
+- name: Instalando o Google Chrome
+  dnf:
+    name: google-chrome-stable
+    state: present
+  become: true
+  tags:
+    - chrome
+    - web
+
+# Instalando o Opera
+
+- name: Instalando o Opera
+  dnf:
+    name: opera-stable
+    state: present
+  become: true
+  tags:
+    - opera
+    - web
+
+# Instalando o Vivaldi
+
+- name: Instalando o Vivaldi
+  dnf:
+    name: vivaldi-stable
+    state: present
+  become: true
+  tags:
+    - vivaldi
+    - web

@@ -1,0 +1,65 @@
+---
+
+
+# Adicionando o repositorio do Google Chrome
+
+- name: Importando a chave do repositorio do Google Chrome
+  rpm_key:
+    key: https://dl.google.com/linux/linux_signing_key.pub
+    state: present
+  become: true
+  tags:
+    - repo
+    - chrome
+    - web
+
+- name: Adicionando o repositório do Google Chrome
+  zypper_repository:
+    name: Google
+    repo: http://dl.google.com/linux/chrome/rpm/stable/x86_64/
+    state: present
+    auto_import_keys: yes
+    overwrite_multiple: yes
+  become: true
+  tags:
+    - repo
+    - chrome
+    - web
+
+# Adicionando o repositorio do Opera
+
+- name: Importando a chave do repositorio do Opera
+  rpm_key:
+    key: https://rpm.opera.com/rpmrepo.key
+    state: present
+  become: true
+  tags:
+    - repo
+    - opera
+    - web
+
+- name: Copiando arquivo de repositório do Opera
+  copy:
+    src: opera-rpm.repo
+    dest: /etc/zypp/repos.d/opera.repo
+    owner: root
+    group: root
+    mode: "0644"
+  become: true
+  tags:
+    - repo
+    - opera
+    - web
+
+    
+# Atualizando todos os repositorios
+
+- name: Atualizando todos os repositorios
+  zypper_repository:
+    repo: '*'
+    runrefresh: yes
+    auto_import_keys: yes
+  become: true
+  tags:
+    - repo
+    - vivaldi
