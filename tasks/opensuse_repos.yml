@@ -67,7 +67,6 @@
 
 - name: Adicionando o repositório do Vivaldi
   zypper_repository:
-    name: Vivaldi
     repo: https://repo.vivaldi.com/archive/vivaldi-suse.repo
     state: present
     runrefresh: yes
