@@ -52,6 +52,33 @@
     - opera
     - web
 
+
+# Adicionando o repositorio do Vivaldi
+
+- name: Importando a chave do repositorio do Vivaldi
+  rpm_key:
+    key: https://repo.vivaldi.com/archive/linux_signing_key.pub
+    state: present
+  become: true
+  tags:
+    - repo
+    - vivaldi
+    - web
+
+- name: Adicionando o repositório do Vivaldi
+  zypper_repository:
+    name: Vivaldi
+    repo: https://repo.vivaldi.com/archive/vivaldi-suse.repo
+    state: present
+    runrefresh: yes
+    auto_import_keys: yes
+    overwrite_multiple: yes
+  become: true
+  tags:
+    - repo
+    - vivaldi
+    - web
+
     
 # Atualizando todos os repositorios
 
@@ -63,4 +90,6 @@
   become: true
   tags:
     - repo
+    - chrome
+    - opera
     - vivaldi

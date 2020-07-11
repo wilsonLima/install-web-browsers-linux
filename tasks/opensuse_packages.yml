@@ -13,6 +13,7 @@
     - chrome
     - web
 
+
 # Instalando o Opera
 
 - name: Instalando o Opera
@@ -25,11 +26,12 @@
     - opera
     - web
 
+
 # Instalando o Vivaldi
 
 - name: Instalando o Vivaldi
   zypper:
-    name: vivaldi
+    name: vivaldi-stable
     state: present
     update_cache: yes
   become: true

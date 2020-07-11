@@ -30,11 +30,6 @@ Tags da Role
 Dependências da Role 
 --------------
 
-openSUSE Leap e Tumbleweed
-
-  - No caso do vivaldi, ter o repositório de extras Packman configurado: https://en.opensuse.org/Additional_package_repositories
-
-
 Linux Mint e Ubuntu:
 
 - openssh-server. Ex.: sudo apt install openssh-server
@@ -79,4 +74,4 @@ Comando para executar a tag "web" (em caso de uso de tags, a tag "main" é obrig
 License
 -------
 
-MIT License
+MIT
