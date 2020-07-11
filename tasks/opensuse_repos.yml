@@ -13,6 +13,7 @@
     - chrome
     - web
 
+
 - name: Adicionando o repositório do Google Chrome
   zypper_repository:
     name: Google
@@ -38,6 +39,7 @@
     - repo
     - opera
     - web
+
 
 - name: Copiando arquivo de repositório do Opera
   copy:
@@ -65,13 +67,14 @@
     - vivaldi
     - web
 
+
 - name: Adicionando o repositório do Vivaldi
-  zypper_repository:
-    repo: https://repo.vivaldi.com/archive/vivaldi-suse.repo
-    state: present
-    runrefresh: yes
-    auto_import_keys: yes
-    overwrite_multiple: yes
+  copy:
+    src: vivaldi-suse.repo
+    dest: /etc/zypp/repos.d/vivaldi.repo
+    owner: root
+    group: root
+    mode: "0644"
   become: true
   tags:
     - repo
