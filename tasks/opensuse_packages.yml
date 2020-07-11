@@ -7,7 +7,7 @@
   zypper:
     name: google-chrome-stable
     state: present
-    force: yes
+    update_cache: yes
   become: true
   tags:
     - chrome
@@ -19,7 +19,7 @@
   zypper:
     name: opera-stable
     state: present
-    force: yes
+    update_cache: yes
   become: true
   tags:
     - opera
@@ -31,7 +31,7 @@
   zypper:
     name: vivaldi
     state: present
-    force: yes
+    update_cache: yes
   become: true
   tags:
     - vivaldi

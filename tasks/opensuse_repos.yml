@@ -18,6 +18,7 @@
     name: Google
     repo: http://dl.google.com/linux/chrome/rpm/stable/x86_64/
     state: present
+    runrefresh: yes
     auto_import_keys: yes
     overwrite_multiple: yes
   become: true
