@@ -17,7 +17,6 @@
     repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     state: present
     filename: google-chrome
-    update_cache: yes
   become: true
   tags:
     - repo
@@ -42,7 +41,6 @@
     repo: "deb [arch=amd64] https://deb.opera.com/opera-stable/ stable non-free"
     state: present
     filename: opera-stable
-    update_cache: yes
   become: true
   tags:
     - repo
@@ -67,10 +65,17 @@
     repo: "deb [arch=amd64] http://repo.vivaldi.com/stable/deb/ stable main"
     state: present
     filename: vivaldi
-    update_cache: yes
   become: true
   tags:
     - repo
     - vivaldi
     - web
 
+
+- name: "Atualizando apt cache"
+  apt: 
+    update_cache: yes 
+    cache_valid_time: 7200
+  become: true
+  tags:
+    - repo
